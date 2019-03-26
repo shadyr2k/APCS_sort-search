@@ -10,9 +10,10 @@ public class SortLibraryQSNoComment {
 		int[] longerArray = ArrayImporter.readArrayFile("smallArray.txt");   
 		int[] myCustomTest = new int[]{5,3,69,73,11,17,1,74,34,86}; 
 		int[] repeatingTest = new int[]{1, 3, 56, 2, 3, 17, 4, 29, 3, 33, 24, 16, 10, 3, 2, 6, 9};
+		int[] what = new int[] {11, 2, 9};
 		
 		// ***Enter your array to sort here
-		int[] arrayToSort = repeatingTest; 
+		int[] arrayToSort = random; 
 		int[] copyOfArrayToSort = Arrays.copyOf(arrayToSort, arrayToSort.length);
 		
 		long startTime1 = System.currentTimeMillis();
@@ -41,33 +42,32 @@ public class SortLibraryQSNoComment {
 		if(hiIndex <= loIndex) return;
 		Random r = new Random();
 		int p = partition(nums, loIndex, hiIndex, r.nextInt(hiIndex - loIndex) + loIndex); 
-		sort(nums, 0, p-1);
+		sort(nums, loIndex, p-1);
 		sort(nums, p+1, hiIndex); 
 	}
 	
 	private static int partition(int[] nums, int loIndex, int hiIndex, int pivotIndex) {
 		int pivot = nums[pivotIndex];
-		int i = loIndex - 1;
+		swap(nums, pivotIndex, loIndex); 
+		
+		int i = loIndex; 
 		int k = hiIndex + 1;
+		
 		while(true) {
 			do { 
-				if(i > 0 && nums[i] == pivot && i == pivotIndex) break; 
+				if(i == hiIndex) break;
 				i++;
 			} while(nums[i] < pivot);
 
 			do {
-				if(k <= hiIndex && nums[k] == pivot && k == pivotIndex) break; //same deal here
 				k--; 
 			} while(nums[k] > pivot);
 			
 			if(i >= k) break; 
-			if(nums[i] == pivot && i == pivotIndex) pivotIndex = k; 
-			else if(nums[k] == pivot && k == pivotIndex) pivotIndex = i;
-
 			swap(nums, i, k);
-
 		}
-		return pivotIndex; 
+		swap(nums, loIndex, k);
+		return k; 
 	}
 
 	public static void swap(int[] nums, int p, int q) {
