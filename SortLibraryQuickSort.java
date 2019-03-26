@@ -10,9 +10,10 @@ public class SortLibraryQuickSort {
 		int[] longerArray = ArrayImporter.readArrayFile("smallArray.txt");  //***beware repeating elements! 
 		int[] myCustomTest = new int[]{5,3,69,73,11,17,1,74,34,86}; //***use this one
 		int[] repeatingTest = new int[]{5,3,8,1,7,7,8,5,10};
+		int[] what = new int[] {33, 11, 9, 40, 28, 2, 47, 15, 51, 64};
 		
 		// ***Enter your array to sort here
-		int[] arrayToSort = myCustomTest; // arrayToSort will point to the array you choose
+		int[] arrayToSort = repeatingTest; // arrayToSort will point to the array you choose
 		int[] copyOfArrayToSort = Arrays.copyOf(arrayToSort, arrayToSort.length);
 		
 		long startTime1 = System.currentTimeMillis();
@@ -45,11 +46,11 @@ public class SortLibraryQuickSort {
 			
 		//partition int (using random element)
 		Random r = new Random();
-		//System.out.println("beginning partition step from index " + loIndex + " to " + hiIndex); => debug 
+		//System.out.println("beginning partition step from index " + loIndex + " to " + hiIndex);  
 		int p = partition(nums, loIndex, hiIndex, r.nextInt(hiIndex - loIndex) + loIndex); 
 		
 		// recursive calls
-		sort(nums, 0, p-1); //sort the array before the pivot
+		sort(nums, loIndex, p-1); //sort the array before the pivot
 		sort(nums, p+1, hiIndex); //sort the array after the pivot
 	}
 	
@@ -57,47 +58,48 @@ public class SortLibraryQuickSort {
 	
 	// iterative (i think this works for repeats???)
 	private static int partition(int[] nums, int loIndex, int hiIndex, int pivotIndex) {
-		//System.out.println(Arrays.toString(nums)); => debug
-		//
 		int pivot = nums[pivotIndex];
-		//System.out.println("partition chosen: " + pivot + " @ index " + pivotIndex); => debug
-		int i = loIndex - 1;
-		int k = hiIndex + 1;
+		
+		// DEBUG System.out.println("first swap: " + nums[pivotIndex] + " (index " + pivotIndex + ") and " + nums[loIndex] + " (index " + loIndex + ")");
+		
+		swap(nums, pivotIndex, loIndex); //put the pivot somewhere else for now because otherwise it's distracting to have it in the middle 
+		
+		//System.out.println(Arrays.toString(nums));  DEBUG
+		//System.out.println("partition chosen: " + pivot + " @ index " + pivotIndex);  DEBUG
+		
+		int i = loIndex; //bc of the increment before check it would skip 0 but that's ok bc we know element 0 = pivot
+		int k = hiIndex + 1; //this is +1 because it will increment down before checking the element
 		while(true) { //no condition needed bc we will always break out of it at one point
-			//find some number on left to swap 
-			do { //do while loop because it should increment before moving onto the next element
-				if(i > 0 && nums[i] == pivot && i == pivotIndex) break; //break out if it's about to pass the pivot 
-																		//but not if it's a repeat number since we don't 
-																		//really care if it's a repeat it just can't be confused 
-																		//with the pivot
+			
+			//find an element on left to swap
+			do { 
+				if(i == hiIndex) break; //in case i decides to increment past the array without seeing an element to swap
 				i++;
-				//System.out.println("i = " + i); => debug
+				//System.out.println("i = " + i); DEBUG
 			} while(nums[i] < pivot);
-			
-			//find some number on right to swap
+
+			//find an element on right to swap
 			do {
-				if(k <= hiIndex && nums[k] == pivot && k == pivotIndex) break; //same deal here
+				//no need for the check if k increments past 0 because we know 0 is the pivot
 				k--; 
-				//System.out.println("k = " + k); => debug
-			} while(nums[k] > pivot);
+				//System.out.println("k = " + k); DEBUG
+			} while(nums[k] > pivot); 
 			
-			if(i >= k) break; //if the pointers ever cross then break out of the while loop 
+			if(i >= k) break; //if the two pointers cross paths we know it's done so break
 			
-			//pivotIndex updating so it always knows which one was the original pivot and which ones are imposters
-			if(nums[i] == pivot && i == pivotIndex) {
-				//System.out.println("swapping with pivot - new pivot index: " + k);
-				pivotIndex = k; 
-			} else if(nums[k] == pivot && k == pivotIndex) {
-				//System.out.println("swapping with pivot - new pivot index: " + k);
-				pivotIndex = i;
-			}
+			//System.out.println("swapping: " + nums[i] + " (index " + i + ") and " + nums[k] + " (index " + k + ")"); DEBUG
 			
-			//System.out.println("swapping: " + nums[i] + " (index " + i + ") and " + nums[k] + " (index " + k + ")"); => debug
 			//if all above tests pass, swap the two elements 
 			swap(nums, i, k);
-			//System.out.println("resulting array: " + Arrays.toString(nums)); => debug
+			
 		}
-		return pivotIndex; // this is important! yes it is!
+		//DEBUG System.out.println("final swap: " + nums[k] + " (index " + k + ") and " + nums[loIndex] + " (index " + loIndex + ")");
+		
+		swap(nums, loIndex, k); //swap back the pivot with the element in the middle 
+		
+		//DEBUG System.out.println("resulting array: " + Arrays.toString(nums));
+		
+		return k;  // this is important! yes it is!
 	}
 	
 	//simple swapping method
