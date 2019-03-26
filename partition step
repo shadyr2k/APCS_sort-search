@@ -1,0 +1,23 @@
+private static int partition(int[] nums, int loIndex, int hiIndex, int pivotIndex) {
+		int pivot = nums[pivotIndex];
+		swap(nums, pivotIndex, loIndex); 
+		
+		int i = loIndex; 
+		int k = hiIndex + 1;
+		
+		while(true) {
+			do { 
+				if(i == hiIndex) break;
+				i++;
+			} while(nums[i] < pivot);
+
+			do {
+				k--; 
+			} while(nums[k] > pivot);
+			
+			if(i >= k) break; 
+			swap(nums, i, k);
+		}
+		swap(nums, loIndex, k);
+		return k; 
+	}
