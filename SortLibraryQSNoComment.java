@@ -10,7 +10,6 @@ public class SortLibraryQSNoComment {
 		int[] longerArray = ArrayImporter.readArrayFile("smallArray.txt");   
 		int[] myCustomTest = new int[]{5,3,69,73,11,17,1,74,34,86}; 
 		int[] repeatingTest = new int[]{1, 3, 56, 2, 3, 17, 4, 29, 3, 33, 24, 16, 10, 3, 2, 6, 9};
-		int[] what = new int[] {11, 2, 9};
 		
 		// ***Enter your array to sort here
 		int[] arrayToSort = random; 
