@@ -1,5 +1,6 @@
 // Code from "Data Structures and Problem Solving Using Java"
 // by Mark Allen Weiss (2nd edition), 2001.   
+// ^ algorithms not by this guy tho
 public final class MaxSubsequenceSumTester
 {
     //seqStart and seqEnd are member variables
