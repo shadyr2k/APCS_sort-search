@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
-public class SortLibrary1 {
+public class SortLibraryQSNoComment {
 	
 	public static void main(String[] args) {
 		int[] random = new int[]{33,94,9,40,77,82,47,15,51,64,76,28,2,85,11};
