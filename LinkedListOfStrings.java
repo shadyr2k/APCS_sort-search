@@ -32,8 +32,7 @@ public class LinkedListOfStrings {
 	// recursively traverse the Linked List, counting out the number of Nodes
 	// whose String contains str
 	public int recursivelyCountNodesWithString(Node head, String str) {
-		if(head.next == null)
-			return head.name.contains(str) ? 1 : 0;
+		if(head.next == null) return head.name.contains(str) ? 1 : 0;
 		if(head.next.name.contains(str)) return 1 + recursivelyCountNodesWithString(head.next, str);
 		return recursivelyCountNodesWithString(head.next, str);
 	}
@@ -86,10 +85,8 @@ public class LinkedListOfStrings {
 	// Inserts the specified element at the specified position in this list.
 	// Throws IndexOutOfBoundsException - if the index is out of range (index < 0 || index >= size())
 	public void add(int index, Node n) {
-		if(index == size()) 
-			add(n);
-		else if(index < 0 || index > size()) 
-			throw new IndexOutOfBoundsException();
+		if(index == size()) add(n);
+		else if(index < 0 || index > size()) throw new IndexOutOfBoundsException("true statement incoming");
 		else {
 			if(index == 0) {
 				n.next = head;
@@ -193,8 +190,7 @@ public class LinkedListOfStrings {
 			returnThis = head;
 			head = n;
 			return returnThis;
-		}
-		else {
+		} else {
 			int count = 0;
 			
 			Node runner = head;
