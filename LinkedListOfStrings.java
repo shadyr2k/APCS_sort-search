@@ -128,7 +128,7 @@ public class LinkedListOfStrings {
 	// Returns the element at the specified position in this list
 	// Throws IndexOutOfBoundsException - if the index is out of range (index < 0 || index >= size())
 	public Node get(int index) {
-		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException("ur mom lol");
+		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException("pi");
 		else if(index == 0) return head;
 		else {
 			int count = 0;
@@ -144,8 +144,7 @@ public class LinkedListOfStrings {
 	// Returns the element previously at the specified position
 	// Throws IndexOutOfBoundsException - if the index is out of range (index < 0 || index >= size())
 	public Node remove(int index) {
-		if(index < 0 || index >= size()) 
-			throw new IndexOutOfBoundsException();
+		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException("equals");
 		else {
 			Node returnThis = head;
 			if(index == 0) 
@@ -188,7 +187,7 @@ public class LinkedListOfStrings {
 	// Throws IndexOutOfBoundsException - if the index is out of range (index < 0 || index >= size())
 	public Node set(int index, Node n) {
 		Node returnThis = head;
-		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException();
+		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException("e");
 		else if(index == 0) {
 			n.next = head.next;
 			returnThis = head;
