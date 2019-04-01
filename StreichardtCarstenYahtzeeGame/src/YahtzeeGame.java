@@ -8,7 +8,7 @@ public class YahtzeeGame {
 	private static YahtzeeDice gameDice = new YahtzeeDice();
 	
 	public YahtzeeGame() {
-		
+		//nothing needed here (empty constructor)
 	}
 	
 	public void playRound() {
