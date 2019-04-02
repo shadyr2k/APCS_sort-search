@@ -13,11 +13,11 @@ Folders:<br/>
 - StreichardtCarstenYahtzeeGame - the yahtzee project we made as a partner thing (altho i chose to work alone because i didn't want to -hardcode absolutely everything) idk if fully functional since i can't possibly test every case but it is playable and should work 99.9% of the time<br/>
 - SubKiller - a project with spaghetti starter code as the teacher gave us videos showing us how to rework it into a better, more elegant object-oriented program <br/>
 - Webcats:<br/>
- - Functions.java (ch2) - simple subroutine calls<br/>
- - LoanCalculator.java (ch3) - one of the earlier webcats on string formatting that people seemed to have trouble on<br/>
- - MosaicCreator.java (ch4) - introduced us to APIs and methods -- beware of rectangles!<br/>
- - Ch5 Folder (RewardsCreditAccount.java and CreditAccount.java) - object oriented programming practice
- - SortLibrary.java (ch7) - 4 sorts : bubble, insertion, selection, and merge (the only nlog(n) there)<br/> 
- - LinkedListOfStrings.java (ch9) - linked list ch9 webcat (i think a lot of it is quite inefficient but it passes all the junit tests) <br/>
+  - Functions.java (ch2) - simple subroutine calls<br/>
+  - LoanCalculator.java (ch3) - one of the earlier webcats on string formatting that people seemed to have trouble on<br/>
+  - MosaicCreator.java (ch4) - introduced us to APIs and methods -- beware of rectangles!<br/>
+  - Ch5 Folder (RewardsCreditAccount.java and CreditAccount.java) - object oriented programming practice
+  - SortLibrary.java (ch7) - 4 sorts : bubble, insertion, selection, and merge (the only nlog(n) there)<br/> 
+  - LinkedListOfStrings.java (ch9) - linked list ch9 webcat (i think a lot of it is quite inefficient but it passes all the junit tests) <br/>
  
  
