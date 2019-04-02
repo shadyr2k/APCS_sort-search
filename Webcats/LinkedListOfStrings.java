@@ -107,8 +107,7 @@ public class LinkedListOfStrings {
 	
 	// Removes all of the elements from this list.
 	public void clear() {
-		while(head != null) 
-			head = head.next;
+		head = null;
 		nodeCount = 0;
 	}
 	
