@@ -186,7 +186,6 @@ public class LinkedListOfStrings {
 		if(index < 0 || index >= size()) throw new IndexOutOfBoundsException("e");
 		else if(index == 0) {
 			n.next = head.next;
-			returnThis = head;
 			head = n;
 			return returnThis;
 		} else {
