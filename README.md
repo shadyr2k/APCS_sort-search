@@ -20,6 +20,6 @@ here are some of the "harder" hw assignments assigned in apcs at lahs (and maybe
   - Ch5 Folder (RewardsCreditAccount.java and CreditAccount.java) - object oriented programming practice
   - SortLibrary.java (ch7) - 4 sorts : bubble, insertion, selection, and merge (the only nlog(n) there)<br/> 
   - LinkedListOfStrings.java (ch9 p1) - linked list ch9 webcat (i think a lot of it is quite inefficient but it passes all the junit tests) <br/>
-  - PersonDatabase.java (ch9 p1) - binary tree portion of the webcat (man this took like so long just cuz i had typos and stuff eeee)<br/>
+  - PersonDatabase.java (ch9 p2) - binary tree portion of the webcat (man this took like so long just cuz i had typos and stuff eeee)<br/>
  
  
