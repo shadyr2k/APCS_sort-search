@@ -3,6 +3,7 @@
 here are some of the "harder" hw assignments assigned in apcs at lahs (and maybe other schools idk)
 
 **Files:<br/>**
+- AP1.java - don't actually know why i have this here but uh yeah it wasn't hard it was kind of just busy work (mc was even easier)<br/>
 - BinarySearchTree.java - an introduction to finding and putting elements in a search tree<br/>
 - MaxSubsequenceSumTester.java - a project given to us to learn about lowering the complexity of an algorithm<br/>
 - SearchLibrary.java - introduction to algorithms, specifically binary sort vs selection sort<br/>
